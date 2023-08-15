@@ -14,7 +14,7 @@ source:
     folder: xcaddy
 
 build:
-  number: 0
+  number: 1
   script:
     - cd src
     - go-licenses save . --save_path ../library_licenses
