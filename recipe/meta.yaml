@@ -1,5 +1,5 @@
 {% set name = "caddy" %}
-{% set version = "2.6.4" %}
+{% set version = "2.7.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   - url: https://github.com/caddyserver/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 41f26a7e494eb0e33cd1f167b3f00a4d9030b2f9d29f673a1837dde7bb5e82b0
+    sha256: ff73a9bd9968d63cae3d9f804d83e67759836a5331c9b13d04b30ebe86369722
     folder: src
   - url: https://github.com/caddyserver/xcaddy/archive/refs/tags/v0.3.4.tar.gz
     sha256: 5ff7b73c2601ceaf3fd1b3d92be49244523b9b98ee6127276d54c4df59a73d28
     folder: xcaddy
 
 build:
-  number: 1
+  number: 0
   script:
     - cd src
     - go-licenses save . --save_path ../library_licenses
