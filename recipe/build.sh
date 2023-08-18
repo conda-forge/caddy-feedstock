@@ -8,7 +8,7 @@ cd ../xcaddy
 (
     unset GOOS
     unset GOARCH
-    go build cmd/xcaddy/main.go -o xcaddy
+    go build -o xcaddy
 )
 
 ./xcaddy build "v$PKG_VERSION" --output "$PREFIX/bin/caddy"
