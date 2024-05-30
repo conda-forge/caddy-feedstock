@@ -12,9 +12,13 @@ source:
   - url: https://github.com/caddyserver/xcaddy/archive/refs/tags/v0.3.4.tar.gz
     sha256: 5ff7b73c2601ceaf3fd1b3d92be49244523b9b98ee6127276d54c4df59a73d28
     folder: xcaddy
+  # https://github.com/uber-go/zap/issues/1441
+  - url: https://github.com/uber-go/zap/raw/master/LICENSE
+    sha256: 7de716e70addb64f9305298ef32a9dd68e40d5b3095a5d868ba4461404dbfbcf
+    path: uber-go-zap.LICENSE
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -32,6 +36,7 @@ about:
   license_file:
     - src/LICENSE
     - library_licenses/
+    - uber-go-zap.LICENSE
   summary: Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS
   dev_url: https://github.com/caddyserver/{{ name }}
 
