@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
-set -e
+set -ex
 
 cd src
-go-licenses save . --save_path ../library_licenses
+# ignore zap/exp/zapslog https://github.com/uber-go/zap/issues/1441
+go-licenses \
+    save . \
+    --ignore go.uber.org/zap/exp/zapslog \
+    --save_path ../library_licenses
 cd ../xcaddy
 (
     unset GOOS
