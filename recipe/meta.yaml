@@ -1,5 +1,5 @@
 {% set name = "caddy" %}
-{% set version = "2.8.2" %}
+{% set version = "2.8.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/caddyserver/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: a7ad961e2f221cb1052ea9a91600ee9b7184c2e6357309dcfaa9ea14d8839067
+    sha256: 5c2e95ad9e688a18dd9d9099c8c132331e01e0bebd401183e8d9123372cf4fcc
     folder: src
   - url: https://github.com/caddyserver/xcaddy/archive/refs/tags/v0.3.4.tar.gz
     sha256: 5ff7b73c2601ceaf3fd1b3d92be49244523b9b98ee6127276d54c4df59a73d28
