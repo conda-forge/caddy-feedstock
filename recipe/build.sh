@@ -3,7 +3,7 @@
 set -ex
 
 cd src
-# ignore zap/exp/zapslog https://github.com/uber-go/zap/issues/1441
+# ignore zap/exp/zapslog (MIT) https://github.com/uber-go/zap/issues/1441
 go-licenses \
     save . \
     --ignore go.uber.org/zap/exp/zapslog \
