@@ -1,39 +1,42 @@
-{% set name = "caddy" %}
-{% set version = "2.10.0" %}
+schema_version: 1
+
+context:
+  name: caddy
+  version: 2.10.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  - url: https://github.com/caddyserver/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  - url: https://github.com/caddyserver/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
     sha256: e07e2747c394a6549751950ec8f7457ed346496f131ee38538ae39cf89ebcc68
-    folder: src
+    target_directory: src
   - url: https://github.com/caddyserver/xcaddy/archive/refs/tags/v0.3.4.tar.gz
     sha256: 5ff7b73c2601ceaf3fd1b3d92be49244523b9b98ee6127276d54c4df59a73d28
-    folder: xcaddy
+    target_directory: xcaddy
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
-    - {{ compiler('go-nocgo') }}
+    - ${{ compiler('go-nocgo') }}
     - go-licenses
 
-test:
-  commands:
-    - caddy version
-    - caddy --help
+tests:
+  - script:
+      - caddy version
+      - caddy --help
 
 about:
-  home: https://caddyserver.com
   license: Apache-2.0
   license_file:
     - src/LICENSE
     - library_licenses/
   summary: Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS
-  dev_url: https://github.com/caddyserver/{{ name }}
+  homepage: https://caddyserver.com
+  repository: https://github.com/caddyserver/${{ name }}
 
 extra:
   recipe-maintainers:
