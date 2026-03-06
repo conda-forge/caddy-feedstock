@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: caddy
-  version: "2.11.1"
+  version: "2.11.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   - url: https://github.com/caddyserver/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 6d0a9e90b3a7ea0b385a66003f493c1a7317f47d57faadd0ee7d82798b7d89e3
+    sha256: ee12f7b5f97308708de5067deebb3d3322fc24f6d54f906a47a0a4e8db799122
     target_directory: src
   - url: https://github.com/caddyserver/xcaddy/archive/refs/tags/v0.3.4.tar.gz
     sha256: 5ff7b73c2601ceaf3fd1b3d92be49244523b9b98ee6127276d54c4df59a73d28
